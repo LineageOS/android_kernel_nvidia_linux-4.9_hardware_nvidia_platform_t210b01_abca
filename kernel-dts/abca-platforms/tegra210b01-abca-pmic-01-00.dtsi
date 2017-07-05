@@ -471,11 +471,6 @@
 		};
 	};
 
-	soft_wdt: soft_watchdog {
-		compatible = "softdog-platform";
-		status = "okay";
-	};
-
 	extcon {
 		compatible = "simple-bus";
 		device_type = "external-connection";

@@ -34,7 +34,6 @@
 #include "tegra210b01-pwm-fan-p2530-0930.dtsi"
 #include <dt-bindings/soc/tegra-pmc.h>
 #include <dt-bindings/thermal/tegra210b01-trips.h>
-#include <abca-plugin-manager/tegra210b01-abca-plugin-manager.dtsi>
 
 / {
 	nvidia,dtbbuildtime = __DATE__, __TIME__;
@@ -184,7 +183,9 @@
 	};
 
 	watchdog@60005100 {
-		status = "disabled";
+		status = "okay";
+		nvidia,enable-on-init;
+		timeout-sec = <120>;
 	};
 
 	pcie-controller@1003000 {
