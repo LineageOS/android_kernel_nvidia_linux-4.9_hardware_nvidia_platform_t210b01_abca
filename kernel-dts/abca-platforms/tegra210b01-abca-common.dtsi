@@ -141,10 +141,12 @@
 	};
 
 	sdhci@700b0000 { /* SDMMC1 for uSD card */
-		uhs-mask = <0x8>;
-		nvidia,update-pinctrl-settings;
 		nvidia,sd-device;
-		cd-gpios = <&gpio TEGRA_GPIO(Z, 1) GPIO_ACTIVE_LOW>;
+		uhs-mask = <0x8>;
+		cd-gpios = <&gpio TEGRA_GPIO(Z, 1) GPIO_ACTIVE_HIGH>;
+		default-drv-type = <1>;
+		power-off-rail;
+		nvidia,update-pinctrl-settings;
 		status = "okay";
 	};
 
