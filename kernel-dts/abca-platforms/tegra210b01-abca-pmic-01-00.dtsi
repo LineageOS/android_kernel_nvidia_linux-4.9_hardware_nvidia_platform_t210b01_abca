@@ -348,6 +348,19 @@
 				};
 			};
 		};
+
+		lpddr4_lv: fan53528@52 {
+			compatible = "fcs,fan53528";
+			reg = <0x52>;
+			status = "okay";
+			regulator-name = "lpddr4-lv";
+			regulator-min-microvolt = <350000>;
+			regulator-max-microvolt = <1143750>;
+			regulator-always-on;
+			regulator-boot-on;
+			regulator-initial-mode = <REGULATOR_MODE_FAST>;
+			fcs,suspend-voltage-selector = <1>;
+		};
 	};
 
 	i2c@7000c000 {
