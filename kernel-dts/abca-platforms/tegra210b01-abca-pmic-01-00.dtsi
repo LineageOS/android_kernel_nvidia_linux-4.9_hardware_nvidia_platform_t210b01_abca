@@ -217,7 +217,7 @@
 					regulator-name = "vdd-pre-reg";
 					regulator-min-microvolt = <1350000>;
 					regulator-max-microvolt = <1350000>;
-					maxim,active-fps-source = <MAX77620_FPS_SRC_1>;
+					maxim,active-fps-source = <MAX77620_FPS_SRC_NONE>;
 					regulator-enable-ramp-delay = <176>;
 					regulator-disable-ramp-delay = <32000>;
 					maxim,ramp-rate-setting = <27500>;
@@ -255,8 +255,8 @@
 
 				max77620_ldo1: ldo1 {
 					regulator-name = "vdd-pex";
-					regulator-min-microvolt = <1050000>;
-					regulator-max-microvolt = <1050000>;
+					regulator-min-microvolt = <1000000>;
+					regulator-max-microvolt = <1000000>;
 					maxim,active-fps-source = <MAX77620_FPS_SRC_NONE>;
 					regulator-enable-ramp-delay = <22>;
 					regulator-disable-ramp-delay = <630>;
@@ -325,11 +325,7 @@
 
 				max77620_ldo7: ldo7 {
 					regulator-name = "vdd-gen-pll-edp";
-					regulator-min-microvolt = <1050000>;
-					regulator-max-microvolt = <1050000>;
-					regulator-always-on;
-					regulator-boot-on;
-					maxim,active-fps-source = <MAX77620_FPS_SRC_1>;
+					maxim,active-fps-source = <MAX77620_FPS_SRC_NONE>;
 					regulator-enable-ramp-delay = <24>;
 					regulator-disable-ramp-delay = <2768>;
 					maxim,ramp-rate-setting = <100000>;
@@ -338,8 +334,8 @@
 
 				max77620_ldo8: ldo8 {
 					regulator-name = "vdd-hdmi-dp";
-					regulator-min-microvolt = <1050000>;
-					regulator-max-microvolt = <1050000>;
+					regulator-min-microvolt = <1000000>;
+					regulator-max-microvolt = <1000000>;
 					maxim,active-fps-source = <MAX77620_FPS_SRC_NONE>;
 					regulator-enable-ramp-delay = <22>;
 					regulator-disable-ramp-delay = <1160>;
