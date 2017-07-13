@@ -47,24 +47,9 @@
 			regulator-disable-ramp-delay = <10000>;
 		};
 
-		max77620_gpio7: regulator@2 {
+		lcd_bl_en: regulator@2 {
 			compatible = "regulator-fixed-sync";
 			reg = <2>;
-			regulator-name = "max77620-gpio7";
-			regulator-min-microvolt = <1200000>;
-			regulator-max-microvolt = <1200000>;
-			regulator-boot-on;
-			gpio = <&max77620 7 0>;
-			enable-active-high;
-			regulator-always-on;
-			regulator-enable-ramp-delay = <240>;
-			regulator-disable-ramp-delay = <11340>;
-			vin-supply = <&max77620_ldo0>;
-		};
-
-		lcd_bl_en: regulator@3 {
-			compatible = "regulator-fixed-sync";
-			reg = <3>;
 			regulator-name = "lcd-bl-en";
 			regulator-min-microvolt = <1800000>;
 			regulator-max-microvolt = <1800000>;
@@ -72,9 +57,9 @@
 			enable-active-high;
 		};
 
-		en_vdd_sd: regulator@4 {
+		en_vdd_sd: regulator@3 {
 			compatible = "regulator-fixed-sync";
-			reg = <4>;
+			reg = <3>;
 			regulator-name = "en-vdd-sd";
 			regulator-min-microvolt = <3300000>;
 			regulator-max-microvolt = <3300000>;
@@ -85,33 +70,33 @@
 			vin-supply = <&vdd_3v3>;
 		};
 
-		en_vdd_cam: regulator@5 {
+		en_vdd_cam: regulator@4 {
 			compatible = "regulator-fixed";
-			reg = <5>;
+			reg = <4>;
 			regulator-name = "en-vdd-cam";
 			regulator-min-microvolt = <1800000>;
 			regulator-max-microvolt = <1800000>;
 		};
 
-		vdd_hdmi: regulator@6 {
+		vdd_hdmi: regulator@5 {
 			compatible = "regulator-fixed";
-			reg = <6>;
+			reg = <5>;
 			regulator-name = "vdd-hdmi";
 			regulator-min-microvolt = <5000000>;
 			regulator-max-microvolt = <5000000>;
 		};
 
-		en_vdd_cpu_fixed: regulator@7 {
+		en_vdd_cpu_fixed: regulator@6 {
 			compatible = "regulator-fixed";
-			reg = <7>;
+			reg = <6>;
 			regulator-name = "vdd-cpu-fixed";
 			regulator-min-microvolt = <1000000>;
 			regulator-max-microvolt = <1000000>;
 		};
 
-		v_pavdd_5v0: regulator@9 {
+		v_pavdd_5v0: regulator@7 {
 			compatible = "regulator-fixed-sync";
-			reg = <9>;
+			reg = <7>;
 			regulator-name = "v_pavdd_5v0";
 			regulator-min-microvolt = <5400000>;
 			regulator-max-microvolt = <5400000>;
@@ -120,9 +105,9 @@
 			regulator-enable-ramp-delay = <232>;
 		};
 
-		v_navdd_5v0: regulator@10 {
+		v_navdd_5v0: regulator@8 {
 			compatible = "regulator-fixed-sync";
-			reg = <10>;
+			reg = <8>;
 			regulator-name = "v_navdd_5v0";
 			regulator-min-microvolt = <5400000>;
 			regulator-max-microvolt = <5400000>;
@@ -131,9 +116,9 @@
 			regulator-enable-ramp-delay = <232>;
 		};
 
-		v_vdd50_a: regulator@11 {
+		v_vdd50_a: regulator@9 {
 			compatible = "regulator-fixed-sync";
-			reg = <11>;
+			reg = <9>;
 			regulator-name = "v_vdd50_a";
 			regulator-min-microvolt = <5000000>;
 			regulator-max-microvolt = <5000000>;
@@ -141,9 +126,9 @@
 			enable-active-high;
 		};
 
-		v_vdd50_b: regulator@12 {
+		v_vdd50_b: regulator@10 {
 			compatible = "regulator-fixed-sync";
-			reg = <12>;
+			reg = <10>;
 			regulator-name = "v_vdd50_b";
 			regulator-min-microvolt = <5000000>;
 			regulator-max-microvolt = <5000000>;
@@ -151,9 +136,9 @@
 			enable-active-high;
 		};
 
-		vdd3v3_gc: regulator@13 {
+		vdd3v3_gc: regulator@11 {
 			compatible = "regulator-fixed-sync";
-			reg = <13>;
+			reg = <11>;
 			regulator-name = "vdd3v3_gc";
 			regulator-min-microvolt = <3300000>;
 			regulator-max-microvolt = <3300000>;
