@@ -53,7 +53,7 @@
 	host1x {
 		/* tegradc.0 */
 		dc@54200000 {
-			avdd_dsi_csi-supply = <&max77620_gpio7>;
+			avdd_dsi_csi-supply = <&max77620_ldo0>;
 			pavdd_lcd-supply = <&v_pavdd_5v0>;
 			navdd_lcd-supply = <&v_navdd_5v0>;
 			dvdd_lcd-supply = <&max77620_sd3>;
@@ -72,7 +72,7 @@
 		};
 
 		vi {
-			avdd_dsi_csi-supply = <&max77620_gpio7>;
+			avdd_dsi_csi-supply = <&max77620_ldo0>;
 		};
 	};
 
