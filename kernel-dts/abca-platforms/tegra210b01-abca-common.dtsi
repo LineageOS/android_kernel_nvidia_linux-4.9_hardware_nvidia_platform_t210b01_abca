@@ -23,9 +23,9 @@
 #include "tegra210b01-abca-comms.dtsi"
 #include <tegra210-soc/tegra210-trusty.dtsi>
 #include <tegra210b01-cpufreq.dtsi>
-#include "tegra210b01-abca-gpio.dtsi"
-#include "tegra210b01-abca-pinmux.dtsi"
-#include "tegra210b01-abca-padvoltage-default.dtsi"
+#include "tegra210b01-abca-gpio-default-01-00.dtsi"
+#include "tegra210b01-abca-pinmux-01-00.dtsi"
+#include "tegra210b01-abca-padvoltage-default-01-00.dtsi"
 #include "tegra210b01-thermal-fan-est-p2530-0930.dtsi"
 #include "tegra210b01-abca-keys.dtsi"
 #include <tegra210-soc/tegra210-edp.dtsi>
@@ -80,6 +80,13 @@
 		nvidia,sys-clock-req-active-high;
 		#nvidia,wake-cells = <3>;
 		nvidia,restrict-voltage-switch;
+
+		pinctrl_iopad_default:iopad-defaults {
+			sdmmc-io-pads {
+				pins = "sdmmc1";
+				nvidia,enable-voltage-switching;
+			};
+		};
 
 		bootrom-commands {
 			nvidia,command-retries-count = <2>;
