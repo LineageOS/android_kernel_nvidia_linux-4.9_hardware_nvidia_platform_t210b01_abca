@@ -29,6 +29,8 @@
 		max77812: max77812@31 {
 			compatible = "maxim,max77812-regulator";
 			reg = <0x31>;
+			maxim,soft-start-slew-rate = <5000>;
+			maxim,ramp-up-slew-rate = <5000>;
 			status = "okay";
 
 			regulators {
@@ -38,8 +40,9 @@
 					regulator-max-microvolt = <1525000>;
 					regulator-init-microvolt = <800000>;
 					regulator-init-mode = <REGULATOR_MODE_NORMAL>;
-					regulator-ramp-delay = <20000>;
+					regulator-ramp-delay = <5000>;
 					regulator-enable-ramp-delay = <5000>;
+					maxim,peak-current-limit-ua = <7200000>;
 				};
 
 				m2vout {
@@ -47,8 +50,9 @@
 					regulator-min-microvolt = <250000>;
 					regulator-max-microvolt = <1525000>;
 					regulator-init-mode = <REGULATOR_MODE_NORMAL>;
-					regulator-ramp-delay = <20000>;
+					regulator-ramp-delay = <5000>;
 					regulator-enable-ramp-delay = <5000>;
+					maxim,peak-current-limit-ua = <7200000>;
 				};
 
 				m3_max_reg: m3vout {
@@ -56,8 +60,9 @@
 					regulator-min-microvolt = <250000>;
 					regulator-max-microvolt = <1525000>;
 					regulator-init-mode = <REGULATOR_MODE_NORMAL>;
-					regulator-ramp-delay = <20000>;
+					regulator-ramp-delay = <5000>;
 					regulator-enable-ramp-delay = <5000>;
+					maxim,peak-current-limit-ua = <7200000>;
 				};
 
 				m4_max_reg: m4vout {
@@ -67,8 +72,9 @@
 					regulator-always-on;
 					regulator-boot-on;
 					regulator-init-mode = <REGULATOR_MODE_NORMAL>;
-					regulator-ramp-delay = <20000>;
+					regulator-ramp-delay = <5000>;
 					regulator-enable-ramp-delay = <5000>;
+					maxim,peak-current-limit-ua = <7200000>;
 				};
 			};
 		};
