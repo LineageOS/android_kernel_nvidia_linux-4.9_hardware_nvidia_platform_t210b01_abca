@@ -112,7 +112,6 @@
 				nvidia,is_ext_dp_panel = <1>;
 				nvidia,lanes = <2>;
 				disp-default-out {
-					nvidia,out-max-pixclk = <3333>; /* KHZ2PICOS(300000) */
 					nvidia,out-type = <TEGRA_DC_OUT_DP>;
 					nvidia,out-align = <TEGRA_DC_ALIGN_MSB>;
 					nvidia,out-order = <TEGRA_DC_ORDER_RED_BLUE>;
