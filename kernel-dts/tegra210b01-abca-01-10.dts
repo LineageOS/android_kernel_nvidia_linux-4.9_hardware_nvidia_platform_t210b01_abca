@@ -29,6 +29,6 @@
 	};
 
 	dvfs {
-		nvidia,gpu-max-freq-khz = <614400>;
+		nvidia,gpu-max-freq-khz = <768000>;
 	};
 };
