@@ -24,7 +24,7 @@
 
 / {
 	i2c@7000d000 {
-		nvidia,bit-banging-xfer-after-shutdown;
+		nvidia,bit-bang-after-shutdown;
 
 		max77812: max77812@31 {
 			compatible = "maxim,max77812-regulator";
