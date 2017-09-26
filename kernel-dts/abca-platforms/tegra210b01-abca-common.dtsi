@@ -657,7 +657,11 @@
 	};
 
 	core_dvfs_cdev_cap {
-		status = "disabled";
+		clocks = <&tegra_car TEGRA210_CLK_CAP_VCORE_C2BUS>,
+			 <&tegra_car TEGRA210_CLK_CAP_VCORE_C3BUS>,
+			 <&tegra_car TEGRA210_CLK_CAP_VCORE_CBUS>,
+			 <&tegra_car TEGRA210_CLK_CAP_VCORE_APE>;
+		clock-names = "c2bus_cap", "c3bus_cap", "cbus_cap", "ape_cap";
 	};
 
 	dfll_cap: dfll-cdev-cap {
@@ -699,31 +703,6 @@
 	};
 
 	thermal-zones {
-		CPU-therm {
-			trips {
-				dfll_cap_trip0: dfll-cap-trip0 {
-					temperature = <TEGRA210B01_DFLL_THERMAL_CAP_0>;
-					hysteresis = <1000>; /* millicelsius */
-					type = "active";
-				};
-				dfll_cap_trip1: dfll-cap-trip1 {
-					temperature = <TEGRA210B01_DFLL_THERMAL_CAP_1>; /* millicelsius */
-					hysteresis = <1000>; /* millicelsius */
-					type = "active";
-				};
-			};
-
-			cooling-maps {
-				dfll-cap-map0 {
-					trip = <&dfll_cap_trip0>;
-					cooling-device = <&dfll_cap 1 1>;
-				};
-				dfll-cap-map1 {
-					trip = <&dfll_cap_trip1>;
-					cooling-device = <&dfll_cap 2 2>;
-				};
-			};
-		};
 		Tboard_tegra {
 			status = "okay";
 		};
@@ -732,14 +711,14 @@
 			polling-delay-passive = <500>;
 			trips {
 				gpu_shutdown {
-					temperature = <93500>;
+					temperature = <92500>;
 					hysteresis = <0>;
 					type = "critical";
 					writable;
 				};
 
 				gpu_throttle {
-					temperature = <86500>;
+					temperature = <86000>;
 					hysteresis = <0>;
 					type = "passive";
 					writable;
@@ -860,22 +839,32 @@
 			};
 			trips {
 				cpu_heavy {
-					temperature = <93000>;
+					temperature = <94500>;
 					hysteresis = <0>;
 					type = "hot";
 					writable;
 				};
 				cpu_throttle {
-					temperature = <88000>;
+					temperature = <90500>;
 					hysteresis = <0>;
 					type = "passive";
 					writable;
 				};
 				cpu_critical {
-					temperature = <95000>;
+					temperature = <96000>;
 					hysteresis = <0>;
 					type = "critical";
 					writable;
+				};
+				dfll_cap_trip0: dfll-cap-trip0 {
+					temperature = <TEGRA210B01_DFLL_THERMAL_CAP_0>;
+					hysteresis = <1000>; /* millicelsius */
+					type = "active";
+				};
+				dfll_cap_trip1: dfll-cap-trip1 {
+					temperature = <TEGRA210B01_DFLL_THERMAL_CAP_1>;
+					hysteresis = <1000>; /* millicelsius */
+					type = "active";
 				};
 			};
 			cooling-maps {
@@ -889,6 +878,14 @@
 					cdev-type = "cpu-balanced";
 					cooling-device = <&{/bthrot_cdev/cpu_balanced}
 						THERMAL_NO_LIMIT THERMAL_NO_LIMIT>;
+				};
+				dfll-cap-map0 {
+					trip = <&dfll_cap_trip0>;
+					cooling-device = <&dfll_cap 1 1>;
+				};
+				dfll-cap-map1 {
+					trip = <&dfll_cap_trip1>;
+					cooling-device = <&dfll_cap 2 2>;
 				};
 			};
 		};
@@ -921,7 +918,7 @@
 		tegra_nct72: temp-sensor@4c {
 			offset = <(-44)>;
 			ext {
-				shutdown-limit = <94>;
+				shutdown-limit = <93>;
 			};
 		};
 	};
