@@ -20,10 +20,12 @@
 	i2c@7000d000 {
 		max77812: max77812@31 {
 			reg = <0x33>;
-			m3vout {
-				regulator-name = "vdd-lp4lv";
-				regulator-always-on;
-				regulator-boot-on;
+			regulators {
+				m3vout {
+					regulator-name = "vdd-lp4lv";
+					regulator-always-on;
+					regulator-boot-on;
+				};
 			};
 		};
 	};
