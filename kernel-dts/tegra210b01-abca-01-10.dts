@@ -29,6 +29,11 @@
 			};
 		};
 	};
+	i2c@7000d000 {
+		fan53528@52 {
+			status = "disabled";
+		};
+	};
 
 	dvfs {
 		nvidia,gpu-max-freq-khz = <768000>;
