@@ -158,6 +158,9 @@
 		status = "okay";
 	};
 
+#if defined(LINUX_VERSION) && LINUX_VERSION >= 409
+	aconnect@702c0000 {
+#endif
 	adma@702e2000  {
 		dma-channels = <10>;
 		status = "okay";
@@ -191,6 +194,9 @@
 			fsync-width = <0>;
 		};
 	};
+#if defined(LINUX_VERSION) && LINUX_VERSION >= 409
+	};
+#endif
 
 	watchdog@60005100 {
 		status = "okay";
@@ -496,6 +502,9 @@
 		};
 	};
 
+#if defined(LINUX_VERSION) && LINUX_VERSION >= 409
+	aconnect@702c0000 {
+#endif
 	adsp_audio {
 		compr-ops = <1>;
 		num-plugin = <5>;
@@ -526,7 +535,9 @@
 			param-type = <2>; /* SNDRV_CTL_ELEM_TYPE_INTEGER */
 		};
 	};
-
+#if defined(LINUX_VERSION) && LINUX_VERSION >= 409
+	};
+#endif
 	bcmdhd_wlan {
 		edp-consumer-name = "primary-wifi";
 	};
@@ -889,11 +900,6 @@
 				};
 			};
 		};
-	};
-
-	adma@702e2000  {
-		dma-channels = <10>;
-		status = "okay";
 	};
 
 	platform-commands {
